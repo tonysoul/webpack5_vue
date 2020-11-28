@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "description": "",
   "scripts": {
-    "build": "webpack --config webpack.config.js"
+    "build": "rimraf dist && cross-env NODE_ENV=production webpack --config config/webpack.config.js",
+    "dev": "cross-env NODE_ENV=development webpack serve --config config/webpack.config.js"
   },
   "repository": {
     "type": "git",
@@ -17,18 +18,21 @@
   },
   "homepage": "https://github.com/tonysoul/webpack5_vue#readme",
   "devDependencies": {
+    "cross-env": "^7.0.2",
     "css-loader": "^5.0.1",
     "file-loader": "^6.2.0",
     "html-webpack-plugin": "^4.5.0",
     "less": "^3.12.2",
     "less-loader": "^7.1.0",
+    "rimraf": "^3.0.2",
     "style-loader": "^2.0.0",
     "url-loader": "^4.1.1",
     "vue-loader": "^15.9.5",
     "vue-template-compiler": "^2.6.12",
     "webpack": "^5.8.0",
     "webpack-cli": "^4.2.0",
-    "webpack-dev-server": "^3.11.0"
+    "webpack-dev-server": "^3.11.0",
+    "webpack-merge": "^5.4.0"
   },
   "dependencies": {
     "vue": "^2.6.12",
